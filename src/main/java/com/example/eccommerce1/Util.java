@@ -10,6 +10,12 @@ public class Util {
     private static final String PASSWORD = "";
 
     public static Connection getConnection() throws SQLException {
+        try {Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            throw new SQLException("MySQL JDBC Driver not found. Ensure it's included in the classpath.", e);
+        }
+
+        // Return the connection
         return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
 }

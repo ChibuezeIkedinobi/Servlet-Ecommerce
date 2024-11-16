@@ -33,15 +33,19 @@ public class UserServlet extends HttpServlet {
     private void registerUser(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
+        String role = "user"; // Default role for regular users
 
         try (Connection connection = Util.getConnection();
-             PreparedStatement statement = connection.prepareStatement("INSERT INTO users (username, password) VALUES (?, ?)")) {
+             PreparedStatement statement = connection.prepareStatement("INSERT INTO users (username, password, role) VALUES (?, ?, ?)")) {
             statement.setString(1, username);
             statement.setString(2, password);
+            statement.setString(3, role);
             statement.executeUpdate();
             response.sendRedirect("login.jsp");
         }
     }
+
+
 
     private void loginUser(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String username = request.getParameter("username");
@@ -56,10 +60,21 @@ public class UserServlet extends HttpServlet {
             if (resultSet.next()) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", username);
-                response.sendRedirect("home.jsp");
+
+                // Check and set role
+                String role = resultSet.getString("role");
+                session.setAttribute("role", role);
+
+                // Redirect based on role
+                if ("admin".equalsIgnoreCase(role)) {
+                    response.sendRedirect("admin.jsp");
+                } else {
+                    response.sendRedirect("home.jsp");
+                }
             } else {
                 response.sendRedirect("login.jsp?error=Invalid credentials");
             }
         }
     }
+
 }
