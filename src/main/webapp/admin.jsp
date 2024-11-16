@@ -9,14 +9,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-  // Check if the user is logged in and is an admin
-  HttpSession session1 = request.getSession(false);
-  if (session1 == null || !"admin".equals(session1.getAttribute("role"))) {
-    response.sendRedirect("login.jsp"); // Redirect non-admins to login
-    return; // Stop further execution of the page
-  }
-%>
+    <%
+      HttpSession session1 = request.getSession(false);
+      if (!"admin".equals(session1.getAttribute("user"))) {
+        response.sendRedirect("login.jsp"); // Redirect non-admins to login
+        return; // Stop further execution
+      }
+    %>
 <html>
 <head>
   <title>Admin Dashboard</title>
