@@ -9,6 +9,7 @@
 ### User Management
 - User registration and login.
 - Admin-specific functionality for managing products.
+- Session handling for user authentication.
 
 ### Product Management
 - Admin can add, view, and remove products from the database.
