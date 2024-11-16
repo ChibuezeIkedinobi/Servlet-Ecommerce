@@ -10,6 +10,16 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+<%
+  HttpSession session1 = request.getSession(false);
+  String role = (session1 != null) ? (String) session1.getAttribute("role") : null;
+
+  if (!"admin".equalsIgnoreCase(role)) {
+    response.sendRedirect("error.jsp"); // Redirect unauthorized users
+    return;
+  }
+%>
+
 <html>
 <head>
   <title>Admin Dashboard</title>
