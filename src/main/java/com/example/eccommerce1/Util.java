@@ -15,7 +15,6 @@ public class Util {
             throw new SQLException("MySQL JDBC Driver not found. Ensure it's included in the classpath.", e);
         }
 
-        // Return the connection
         return DriverManager.getConnection(URL, USERNAME, PASSWORD);
     }
 }

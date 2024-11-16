@@ -146,7 +146,7 @@
 </header>
 
 <div class="container">
-  <!-- Form to Add Products -->
+
   <h3>Add New Product</h3>
   <form action="ProductServlet" method="post">
     <input type="hidden" name="action" value="addProduct">
@@ -159,7 +159,6 @@
     <button type="submit">Add Product</button>
   </form>
 
-  <!-- Display Existing Products -->
   <h3>Manage Products</h3>
   <table>
     <tr>
@@ -181,7 +180,7 @@
       <td><%= resultSet.getString("description") %></td>
       <td>$<%= resultSet.getDouble("price") %></td>
       <td>
-        <!-- Form to Remove Product -->
+
         <form action="ProductServlet" method="post" style="display:inline;">
           <input type="hidden" name="action" value="removeProduct">
           <input type="hidden" name="productId" value="<%= resultSet.getInt("id") %>">

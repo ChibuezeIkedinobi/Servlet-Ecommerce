@@ -26,23 +26,19 @@
             text-align: center;
             margin-top: 50px;
         }
-
         h1 {
             color: #333;
         }
-
         p {
             margin-top: 20px;
             font-size: 16px;
             color: #555;
         }
-
         a {
             text-decoration: none;
             color: #007bff;
             font-weight: bold;
         }
-
         a:hover {
             color: #0056b3;
         }

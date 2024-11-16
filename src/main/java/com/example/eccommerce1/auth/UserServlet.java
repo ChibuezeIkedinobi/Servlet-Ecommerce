@@ -33,7 +33,7 @@ public class UserServlet extends HttpServlet {
     private void registerUser(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        String role = "user"; // Default role for regular users
+        String role = "user";
 
         try (Connection connection = Util.getConnection();
              PreparedStatement statement = connection.prepareStatement("INSERT INTO users (username, password, role) VALUES (?, ?, ?)")) {
@@ -61,11 +61,9 @@ public class UserServlet extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", username);
 
-                // Check and set role
                 String role = resultSet.getString("role");
                 session.setAttribute("role", role);
 
-                // Redirect based on role
                 if ("admin".equalsIgnoreCase(role)) {
                     response.sendRedirect("admin.jsp");
                 } else {

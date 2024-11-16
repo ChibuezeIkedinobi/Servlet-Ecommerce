@@ -5,34 +5,4 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <!-- UserServlet Configuration -->
-<!--    <servlet>-->
-<!--        <servlet-name>UserServlet</servlet-name>-->
-<!--        <servlet-class>com.example.eccommerce1.auth.UserServlet</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>UserServlet</servlet-name>-->
-<!--        <url-pattern>/UserServlet</url-pattern>-->
-<!--    </servlet-mapping>-->
-
-<!--    &lt;!&ndash; ProductServlet Configuration &ndash;&gt;-->
-<!--    <servlet>-->
-<!--        <servlet-name>ProductServlet</servlet-name>-->
-<!--        <servlet-class>com.example.eccommerce1.shopServlet.ProductServlet</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>ProductServlet</servlet-name>-->
-<!--        <url-pattern>/ProductServlet</url-pattern>-->
-<!--    </servlet-mapping>-->
-
-<!--    &lt;!&ndash; CartServlet Configuration &ndash;&gt;-->
-<!--    <servlet>-->
-<!--        <servlet-name>CartServlet</servlet-name>-->
-<!--        <servlet-class>com.example.eccommerce1.shopServlet.CartServlet</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>CartServlet</servlet-name>-->
-<!--        <url-pattern>/CartServlet</url-pattern>-->
-<!--    </servlet-mapping>-->
-
 </web-app>

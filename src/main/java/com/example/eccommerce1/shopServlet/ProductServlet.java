@@ -26,7 +26,7 @@ public class ProductServlet extends HttpServlet {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("error.jsp"); // Redirect to an error page in case of failure
+            response.sendRedirect("error.jsp");
         }
     }
 
@@ -35,7 +35,7 @@ public class ProductServlet extends HttpServlet {
         String description = request.getParameter("description");
         String priceStr = request.getParameter("price");
 
-        // Validate input
+
         if (name == null || description == null || priceStr == null || name.trim().isEmpty() || description.trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid input data");
         }
@@ -47,7 +47,7 @@ public class ProductServlet extends HttpServlet {
             throw new IllegalArgumentException("Invalid price format", e);
         }
 
-        // Insert the product into the database
+
         try (Connection connection = Util.getConnection();
              PreparedStatement statement = connection.prepareStatement("INSERT INTO products (name, description, price) VALUES (?, ?, ?)")) {
             statement.setString(1, name);
@@ -62,7 +62,7 @@ public class ProductServlet extends HttpServlet {
     private void removeProduct(HttpServletRequest request, HttpServletResponse response) throws Exception {
         String productIdStr = request.getParameter("productId");
 
-        // Validate input
+
         if (productIdStr == null || productIdStr.trim().isEmpty()) {
             throw new IllegalArgumentException("Invalid product ID");
         }
@@ -74,7 +74,7 @@ public class ProductServlet extends HttpServlet {
             throw new IllegalArgumentException("Invalid product ID format", e);
         }
 
-        // Remove the product from the database
+
         try (Connection connection = Util.getConnection();
              PreparedStatement statement = connection.prepareStatement("DELETE FROM products WHERE id = ?")) {
             statement.setInt(1, productId);
