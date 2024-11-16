@@ -1,5 +1,5 @@
 <%@ page import="java.sql.Connection" %>
-<%@ page import="com.example.eccommerce1.Util" %>
+<%@ page import="com.example.eccommerce1.util.Util" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.
@@ -18,38 +18,81 @@
 <head>
     <title>Shopping Cart</title>
     <style>
+        /* General Styling */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 20px;
+            background-color: #f9f9fb;
+            margin: 0;
+            padding: 0;
         }
 
+        /* Header Styling */
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header div {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .header span {
+            font-size: 16px;
+        }
+
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            background-color: #0056b3;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header a:hover {
+            background-color: #003f8f;
+        }
+
+        /* Main Content Styling */
         h2 {
             text-align: center;
             color: #333;
+            margin: 20px 0;
         }
 
         table {
-            width: 80%;
+            width: 90%;
             margin: 20px auto;
             border-collapse: collapse;
             background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         table th, table td {
             border: 1px solid #ddd;
-            padding: 10px;
+            padding: 12px;
             text-align: center;
         }
 
         table th {
-            background-color: #f8f9fa;
+            background-color: #f2f2f2;
             color: #555;
         }
 
         table tr:hover {
-            background-color: #f1f1f1;
+            background-color: #f9f9fb;
         }
 
         table tr:last-child td {
@@ -57,17 +100,41 @@
             color: #007bff;
         }
 
-        a {
-            display: block;
+        /* Buttons and Links */
+        .btn-container {
             text-align: center;
-            margin: 20px auto;
+            margin: 20px 0;
+        }
+
+        .btn-container a {
             text-decoration: none;
-            color: #007bff;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 4px;
             font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-container a:hover {
+            background-color: #0056b3;
+        }
+
+        .empty-cart {
+            text-align: center;
+            color: #888;
+            font-size: 16px;
+            margin: 20px 0;
+        }
+
+        .empty-cart a {
+            color: #007bff;
+            text-decoration: none;
             font-weight: bold;
         }
 
-        a:hover {
+        .empty-cart a:hover {
             color: #0056b3;
         }
     </style>
@@ -129,12 +196,15 @@
     } else {
     %>
     <tr>
-        <td colspan="4">Please <a href="login.jsp">login</a> to view your cart.</td>
+        <td colspan="4" class="empty-cart">Please <a href="login.jsp">login</a> to view your cart.</td>
     </tr>
     <%
         }
     %>
 </table>
-<a href="home.jsp">Continue Shopping</a>
+
+<div class="btn-container">
+    <a href="home.jsp">Continue Shopping</a>
+</div>
 </body>
 </html>

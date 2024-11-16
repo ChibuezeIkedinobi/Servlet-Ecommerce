@@ -1,5 +1,5 @@
 <%@ page import="java.sql.Connection" %>
-<%@ page import="com.example.eccommerce1.Util" %>
+<%@ page import="com.example.eccommerce1.util.Util" %>
 <%@ page import="java.sql.PreparedStatement" %>
 <%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.

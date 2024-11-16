@@ -1,4 +1,4 @@
-package com.example.eccommerce1;
+package com.example.eccommerce1.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
