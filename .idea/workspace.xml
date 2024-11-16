@@ -11,7 +11,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b831efbc-b990-480b-91da-4bae4bac85be" name="Changes" comment="sample">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/eccommerce1/auth/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/eccommerce1/auth/UserServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/eccommerce1/shopServlet/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/eccommerce1/shopServlet/ProductServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/admin.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/admin.jsp" afterDir="false" />
     </list>
@@ -225,7 +224,7 @@
       <workItem from="1731448538302" duration="4143000" />
       <workItem from="1731490214609" duration="10000" />
       <workItem from="1731491519437" duration="2618000" />
-      <workItem from="1731763394586" duration="5616000" />
+      <workItem from="1731763394586" duration="6771000" />
     </task>
     <task id="LOCAL-00001" summary="sample">
       <option name="closed" value="true" />
@@ -243,7 +242,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731767433229</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="sample">
+      <option name="closed" value="true" />
+      <created>1731769251814</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731769251814</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,37 +265,37 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/eccommerce1/shopServlet/ProductServlet.java</url>
-          <line>44</line>
+          <line>38</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/eccommerce1/shopServlet/ProductServlet.java</url>
-          <line>57</line>
+          <line>51</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/eccommerce1/shopServlet/ProductServlet.java</url>
-          <line>64</line>
+          <line>58</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/eccommerce1/shopServlet/ProductServlet.java</url>
-          <line>71</line>
+          <line>65</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/eccommerce1/shopServlet/ProductServlet.java</url>
-          <line>77</line>
+          <line>71</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/eccommerce1/shopServlet/ProductServlet.java</url>
-          <line>84</line>
+          <line>78</line>
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/eccommerce1/shopServlet/ProductServlet.java</url>
-          <line>89</line>
+          <line>83</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
