@@ -106,7 +106,7 @@
             margin: 20px 0;
         }
 
-        .btn-container a {
+        .btn-container a, .btn-container form button {
             text-decoration: none;
             color: #fff;
             background-color: #007bff;
@@ -115,10 +115,28 @@
             font-size: 16px;
             font-weight: bold;
             transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
-        .btn-container a:hover {
+        .btn-container a:hover, .btn-container form button:hover {
             background-color: #0056b3;
+        }
+
+        .btn-remove {
+            background-color: #dc3545;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-remove:hover {
+            background-color: #c82333;
         }
 
         .empty-cart {
@@ -160,12 +178,13 @@
         <th>Quantity</th>
         <th>Price</th>
         <th>Total</th>
+        <th>Action</th>
     </tr>
     <%
         if (username != null) {
             try (Connection connection = Util.getConnection();
                  PreparedStatement statement = connection.prepareStatement(
-                         "SELECT p.name, c.quantity, p.price, (c.quantity * p.price) AS total " +
+                         "SELECT p.name, c.quantity, p.price, (c.quantity * p.price) AS total, p.id AS productId " +
                                  "FROM cart c " +
                                  "JOIN products p ON c.product_id = p.id " +
                                  "JOIN users u ON c.user_id = u.id " +
@@ -175,19 +194,27 @@
                 double grandTotal = 0.0;
                 while (resultSet.next()) {
                     grandTotal += resultSet.getDouble("total");
+                    int productId = resultSet.getInt("productId");
     %>
     <tr>
         <td><%= resultSet.getString("name") %></td>
         <td><%= resultSet.getInt("quantity") %></td>
-        <td><%= resultSet.getDouble("price") %></td>
-        <td><%= resultSet.getDouble("total") %></td>
+        <td>N<%= resultSet.getDouble("price") %></td>
+        <td>N<%= resultSet.getDouble("total") %></td>
+        <td>
+            <form action="CartServlet" method="post" style="display:inline;">
+                <input type="hidden" name="action" value="removeFromCart">
+                <input type="hidden" name="productId" value="<%= productId %>">
+                <button type="submit" class="btn-remove">Remove</button>
+            </form>
+        </td>
     </tr>
     <%
         }
     %>
     <tr>
         <td colspan="3">Grand Total</td>
-        <td><%= grandTotal %></td>
+        <td colspan="2">N<%= grandTotal %></td>
     </tr>
     <%
         } catch (Exception e) {
@@ -196,7 +223,7 @@
     } else {
     %>
     <tr>
-        <td colspan="4" class="empty-cart">Please <a href="login.jsp">login</a> to view your cart.</td>
+        <td colspan="5" class="empty-cart">Please <a href="login.jsp">login</a> to view your cart.</td>
     </tr>
     <%
         }
@@ -205,6 +232,12 @@
 
 <div class="btn-container">
     <a href="home.jsp">Continue Shopping</a>
+    <% if (username != null) { %>
+    <form action="CartServlet" method="post" style="display:inline;">
+        <input type="hidden" name="action" value="checkout">
+        <button type="submit">Checkout</button>
+    </form>
+    <% } %>
 </div>
 </body>
 </html>

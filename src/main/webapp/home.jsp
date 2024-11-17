@@ -155,7 +155,7 @@
 </head>
 <body>
 <div class="header">
-  <h1>Welcome to Our Store</h1>
+  <h1>Welcome to Ikedinobi's Fruit Store</h1>
   <div>
     <% if (username != null) { %>
     <span>Logged in as <%= username %></span>
@@ -191,7 +191,7 @@
   <tr>
     <td><%= rs.getString("name") %></td>
     <td><%= rs.getString("description") %></td>
-    <td><%= rs.getDouble("price") %></td>
+    <td>N<%= rs.getDouble("price") %></td>
     <td>
       <% if (username != null) { %>
       <form action="CartServlet" method="post">

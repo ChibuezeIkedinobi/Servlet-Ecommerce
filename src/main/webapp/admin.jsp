@@ -188,7 +188,7 @@
       <td><%= resultSet.getInt("id") %></td>
       <td><%= resultSet.getString("name") %></td>
       <td><%= resultSet.getString("description") %></td>
-      <td>$<%= resultSet.getDouble("price") %></td>
+      <td>N<%= resultSet.getDouble("price") %></td>
       <td>
 
         <form action="ProductServlet" method="post" style="display:inline;">

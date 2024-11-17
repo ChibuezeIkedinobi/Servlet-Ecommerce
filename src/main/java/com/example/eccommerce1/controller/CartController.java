@@ -17,13 +17,17 @@ public class CartController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String action = request.getParameter("action");
 
-        if ("addToCart".equals(action)) {
-            try {
+        try {
+            if ("addToCart".equals(action)) {
                 cartService.addToCart(request, response);
-            } catch (Exception e) {
-                e.printStackTrace();
-                response.sendRedirect("error.jsp");
+            } else if ("removeFromCart".equals(action)) {
+                cartService.removeFromCart(request, response);
+            } else if ("checkout".equals(action)) {
+                cartService.checkout(request, response);
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.sendRedirect("error.jsp");
         }
     }
 }
